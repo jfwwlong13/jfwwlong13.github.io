@@ -364,7 +364,7 @@
                 
               
 
-              <time title="创建时间：2019-02-23 17:55:15 / 修改时间：18:39:56" itemprop="dateCreated datePublished" datetime="2019-02-23T17:55:15+09:00">2019-02-23</time>
+              <time title="创建时间：2019-02-23 17:55:15 / 修改时间：18:56:27" itemprop="dateCreated datePublished" datetime="2019-02-23T17:55:15+09:00">2019-02-23</time>
             
 
             
@@ -374,6 +374,24 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -434,8 +452,7 @@
 <p><strong>这道题需要注意循环结束后要检查carry的值，如果大于0则需要建立一个新的节点</strong>。比如999 + 1 = 1000 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">    ListNode dummy = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    ListNode prev = dummy;</span><br><span class="line">    <span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (l1 != <span class="keyword">null</span> || l2 != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> v1 = l1 == <span class="keyword">null</span> ? <span class="number">0</span> : l1.val;</span><br><span class="line">        <span class="keyword">int</span> v2 = l2 == <span class="keyword">null</span> ? <span class="number">0</span> : l2.val;</span><br><span class="line">        <span class="keyword">int</span> sum = v1 + v2 + carry;</span><br><span class="line">        prev.next = <span class="keyword">new</span> ListNode(sum % <span class="number">10</span>);</span><br><span class="line">        </span><br><span class="line">        prev = prev.next;</span><br><span class="line">        carry = sum / <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">if</span> (l1 != <span class="keyword">null</span>) &#123;</span><br><span class="line">            l1 = l1.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (l2 != <span class="keyword">null</span>) &#123;</span><br><span class="line">            l2 = l2.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (carry &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        prev.next = <span class="keyword">new</span> ListNode(carry);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dummy.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>时间复杂度：O(<span class="math inline">\(max(M, N)\)</span>)<br>
 空间复杂度：O(<span class="math inline">\(max(M, N)\)</span>)<br>
-<span class="math inline">\(max(M, N)\)</span><br>
-<span class="math inline">\(f(x) = a + b\)</span> M和N分别是两个链表的长度</p>
+M和N分别是两个链表的长度</p>
 
           
         
@@ -537,7 +554,7 @@
                 
               
 
-              <time title="创建时间：2019-02-23 11:46:15 / 修改时间：17:57:54" itemprop="dateCreated datePublished" datetime="2019-02-23T11:46:15+09:00">2019-02-23</time>
+              <time title="创建时间：2019-02-23 11:46:15 / 修改时间：18:53:51" itemprop="dateCreated datePublished" datetime="2019-02-23T11:46:15+09:00">2019-02-23</time>
             
 
             
@@ -547,6 +564,24 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -600,7 +635,9 @@
 <p>因为这道题需要返回数组的index，所以我们不能使用第二种解法，因为排序之后的数组index都变了。所以这里我们采用第一种解法。</p>
 <h1 id="solution">Solution</h1>
 <p>遍历数组，用一个HashMap保存已经访问过的数字。对于每个新的数字v，查看HashMap中是否存在target - v。如果是则直接返回他们的index <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; valToIdx = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (valToIdx.containsKey(target - nums[i])) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;valToIdx.get(target - nums[i]), i&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        valToIdx.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"Should not reach here"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>时间复杂度：O(N) 空间复杂度：O(N) N是数组的大小</p>
+<p>时间复杂度：O(N)<br>
+空间复杂度：O(N)<br>
+N是数组的大小</p>
 
           
         
@@ -857,6 +894,19 @@
               
 
               
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
 
               
                 
@@ -1054,6 +1104,8 @@
   
     
       
+        
+      
     
       
     
@@ -1061,6 +1113,43 @@
     
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow: auto hidden;
+}
+</style>
+
+    
   
 
 
