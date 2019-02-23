@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="Problem  Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use t">
-<meta name="keywords" content="Array,Hash Table">
+  <meta name="description" content="Problem Given a string, find the length of the longest substring without repeating characters.  Example 1: Input: &quot;abcabcbb&quot; Output: 3 Explanation: The answer is &quot;abc&quot;, with the length of 3.   Example">
+<meta name="keywords" content="String,Two Pointers">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[LeetCode] 1. Two Sum">
-<meta property="og:url" content="http://yoursite.com/2019/02/23/Leetcode-1-Two-Sum/index.html">
+<meta property="og:title" content="[LeetCode] 3. Longest Substring Without Repeating Characters">
+<meta property="og:url" content="http://yoursite.com/2019/02/23/Leetcode-3/index.html">
 <meta property="og:site_name" content="Jfwwlong Blog">
-<meta property="og:description" content="Problem  Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use t">
+<meta property="og:description" content="Problem Given a string, find the length of the longest substring without repeating characters.  Example 1: Input: &quot;abcabcbb&quot; Output: 3 Explanation: The answer is &quot;abc&quot;, with the length of 3.   Example">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-23T14:10:24.499Z">
+<meta property="og:updated_time" content="2019-02-23T14:12:13.195Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[LeetCode] 1. Two Sum">
-<meta name="twitter:description" content="Problem  Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use t">
+<meta name="twitter:title" content="[LeetCode] 3. Longest Substring Without Repeating Characters">
+<meta name="twitter:description" content="Problem Given a string, find the length of the longest substring without repeating characters.  Example 1: Input: &quot;abcabcbb&quot; Output: 3 Explanation: The answer is &quot;abc&quot;, with the length of 3.   Example">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/23/Leetcode-1-Two-Sum/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/23/Leetcode-3/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>[LeetCode] 1. Two Sum | Jfwwlong Blog</title>
+  <title>[LeetCode] 3. Longest Substring Without Repeating Characters | Jfwwlong Blog</title>
   
 
 
@@ -323,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/Leetcode-1-Two-Sum/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/Leetcode-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jianfu">
@@ -340,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">[LeetCode] 1. Two Sum
+          <h1 class="post-title" itemprop="name headline">[LeetCode] 3. Longest Substring Without Repeating Characters
 
               
             
@@ -366,7 +366,7 @@
                 
               
 
-              <time title="创建时间：2019-02-23 11:46:15 / 修改时间：23:10:24" itemprop="dateCreated datePublished" datetime="2019-02-23T11:46:15+09:00">2019-02-23</time>
+              <time title="创建时间：2019-02-23 19:30:00 / 修改时间：23:12:13" itemprop="dateCreated datePublished" datetime="2019-02-23T19:30:00+09:00">2019-02-23</time>
             
 
             
@@ -407,8 +407,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/02/23/Leetcode-1-Two-Sum/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/23/Leetcode-1-Two-Sum/" itemprop="commentCount"></span>
+                <a href="/2019/02/23/Leetcode-3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/23/Leetcode-3/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -437,24 +437,31 @@
 
       
         <h1 id="problem">Problem</h1>
+<p>Given a string, find the length of the longest substring without repeating characters.</p>
 <blockquote>
-<p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.<br>
-You may assume that each input would have exactly one solution, and you may not use the same element twice.<br>
-Example:<br>
-Given nums = [2, 7, 11, 15], target = 9,<br>
-Because nums[0] + nums[1] = 2 + 7 = 9,<br>
-return [0, 1].</p>
+<p>Example 1:<br>
+Input: "abcabcbb"<br>
+Output: 3<br>
+Explanation: The answer is "abc", with the length of 3.</p>
+</blockquote>
+<blockquote>
+<p>Example 2: Input: "bbbbb"<br>
+Output: 1<br>
+Explanation: The answer is "b", with the length of 1.</p>
+</blockquote>
+<blockquote>
+<p>Example 3: Input: "pwwkew"<br>
+Output: 3<br>
+Explanation: The answer is "wke", with the length of 3.<br>
+Note that the answer must be a substring, "pwke" is a subsequence and not a substring.</p>
 </blockquote>
 <h1 id="thinking">Thinking</h1>
-<p>遇到这种2 sum，3 sum，n sum的题目，无外乎就是两种思路<br>
-1. 用一个HashMap，用来保存查找过的数字<br>
-2. 双指针法（适用于数组有序的情况）</p>
-<p>因为这道题需要返回数组的index，所以我们不能使用第二种解法，因为排序之后的数组index都变了。所以这里我们采用第一种解法。</p>
+<p>关键字：子串，无重复，马上想到的就是sliding window + HashSet策略：维护一个滑动窗口，保证这个窗口内没有重复的字符。</p>
 <h1 id="solution">Solution</h1>
-<p>遍历数组，用一个HashMap保存已经访问过的数字。对于每个新的数字v，查看HashMap中是否存在target - v。如果是则直接返回他们的index <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; valToIdx = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (valToIdx.containsKey(target - nums[i])) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;valToIdx.get(target - nums[i]), i&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        valToIdx.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"Should not reach here"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>时间复杂度：O(N)<br>
-空间复杂度：O(N)<br>
-N是数组的大小</p>
+<p>用i和j作为滑动窗口的双指针，对于每个位置j，都试图缩小窗口来保证窗口内没有重复字符。<br>
+同时使用一个boolean[256]的数组来作为哈希表。256是扩展ASCII码的数量。 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">boolean</span>[] visited = <span class="keyword">new</span> <span class="keyword">boolean</span>[<span class="number">256</span>];</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; s.length(); j++) &#123;</span><br><span class="line">        <span class="keyword">char</span> ch = s.charAt(j);</span><br><span class="line">        <span class="keyword">while</span> (visited[ch]) &#123;</span><br><span class="line">            visited[s.charAt(i)] = <span class="keyword">false</span>;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        visited[ch] = <span class="keyword">true</span>;</span><br><span class="line">        result = Math.max(result, j - i + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>时间复杂度：O(N)。N是字符串的长度<br>
+空间复杂度：O(1)。因为我们使用的额外空间是常数256，它不会随着字符串长度的增加而变大</p>
 
       
     </div>
@@ -478,9 +485,9 @@ N是数组的大小</p>
       
         <div class="post-tags">
           
-            <a href="/tags/Array/" rel="tag"># Array</a>
+            <a href="/tags/String/" rel="tag"># String</a>
           
-            <a href="/tags/Hash-Table/" rel="tag"># Hash Table</a>
+            <a href="/tags/Two-Pointers/" rel="tag"># Two Pointers</a>
           
         </div>
       
@@ -493,14 +500,18 @@ N是数组的大小</p>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/02/23/Leetcode-2-Add-Two-Numbers/" rel="next" title="[LeetCode] 2. Add Two Numbers">
+                <i class="fa fa-chevron-left"></i> [LeetCode] 2. Add Two Numbers
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/23/Leetcode-2-Add-Two-Numbers/" rel="prev" title="[LeetCode] 2. Add Two Numbers">
-                [LeetCode] 2. Add Two Numbers <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/23/Leetcode-4/" rel="prev" title="[LeetCode] 4. Median of Two Sorted Arrays">
+                [LeetCode] 4. Median of Two Sorted Arrays <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -813,9 +824,9 @@ N是数组的大小</p>
 
 <script>
   var disqus_config = function() {
-    this.page.url = "http://yoursite.com/2019/02/23/Leetcode-1-Two-Sum/";
-    this.page.identifier = "2019/02/23/Leetcode-1-Two-Sum/";
-    this.page.title = '[LeetCode] 1. Two Sum';
+    this.page.url = "http://yoursite.com/2019/02/23/Leetcode-3/";
+    this.page.identifier = "2019/02/23/Leetcode-3/";
+    this.page.title = '[LeetCode] 3. Longest Substring Without Repeating Characters';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');

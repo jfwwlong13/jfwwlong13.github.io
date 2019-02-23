@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="Problem  Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use t">
-<meta name="keywords" content="Array,Hash Table">
+  <meta name="description" content="Problem The string &quot;PAYPALISHIRING&quot; is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)   P   A   H   N   A">
+<meta name="keywords" content="Implementation">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[LeetCode] 1. Two Sum">
-<meta property="og:url" content="http://yoursite.com/2019/02/23/Leetcode-1-Two-Sum/index.html">
+<meta property="og:title" content="[LeetCode] 6. ZigZag Conversion">
+<meta property="og:url" content="http://yoursite.com/2019/02/23/Leetcode-6/index.html">
 <meta property="og:site_name" content="Jfwwlong Blog">
-<meta property="og:description" content="Problem  Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use t">
+<meta property="og:description" content="Problem The string &quot;PAYPALISHIRING&quot; is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)   P   A   H   N   A">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-23T14:10:24.499Z">
+<meta property="og:updated_time" content="2019-02-23T14:14:01.251Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[LeetCode] 1. Two Sum">
-<meta name="twitter:description" content="Problem  Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use t">
+<meta name="twitter:title" content="[LeetCode] 6. ZigZag Conversion">
+<meta name="twitter:description" content="Problem The string &quot;PAYPALISHIRING&quot; is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)   P   A   H   N   A">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/23/Leetcode-1-Two-Sum/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/23/Leetcode-6/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>[LeetCode] 1. Two Sum | Jfwwlong Blog</title>
+  <title>[LeetCode] 6. ZigZag Conversion | Jfwwlong Blog</title>
   
 
 
@@ -323,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/Leetcode-1-Two-Sum/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/Leetcode-6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jianfu">
@@ -340,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">[LeetCode] 1. Two Sum
+          <h1 class="post-title" itemprop="name headline">[LeetCode] 6. ZigZag Conversion
 
               
             
@@ -366,7 +366,7 @@
                 
               
 
-              <time title="创建时间：2019-02-23 11:46:15 / 修改时间：23:10:24" itemprop="dateCreated datePublished" datetime="2019-02-23T11:46:15+09:00">2019-02-23</time>
+              <time title="创建时间：2019-02-23 22:33:00 / 修改时间：23:14:01" itemprop="dateCreated datePublished" datetime="2019-02-23T22:33:00+09:00">2019-02-23</time>
             
 
             
@@ -407,8 +407,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/02/23/Leetcode-1-Two-Sum/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/23/Leetcode-1-Two-Sum/" itemprop="commentCount"></span>
+                <a href="/2019/02/23/Leetcode-6/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/23/Leetcode-6/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -437,24 +437,42 @@
 
       
         <h1 id="problem">Problem</h1>
+The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)<br>
+
+<pre>
+P   A   H   N  
+A P L S I I G  
+Y   I   R  
+</pre>
+<p>And then read line by line: "PAHNAPLSIIGYIR"<br>
+Write the code that will take a string and make this conversion given a number of rows:</p>
 <blockquote>
-<p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.<br>
-You may assume that each input would have exactly one solution, and you may not use the same element twice.<br>
-Example:<br>
-Given nums = [2, 7, 11, 15], target = 9,<br>
-Because nums[0] + nums[1] = 2 + 7 = 9,<br>
-return [0, 1].</p>
+<p>string convert(string s, int numRows);</p>
+</blockquote>
+<p>Example 1:</p>
+<blockquote>
+<p>Input: s = "PAYPALISHIRING", numRows = 3 Output: "PAHNAPLSIIGYIR"</p>
+</blockquote>
+<p>Example 2:</p>
+<blockquote>
+Input: s = "PAYPALISHIRING", numRows = 4<br>
+Output: "PINALSIGYAHRPI"<br>
+Explanation:
+<pre>
+P     I    N  
+A   L S  I G  
+Y A   H R  
+P     I
+</pre>
 </blockquote>
 <h1 id="thinking">Thinking</h1>
-<p>遇到这种2 sum，3 sum，n sum的题目，无外乎就是两种思路<br>
-1. 用一个HashMap，用来保存查找过的数字<br>
-2. 双指针法（适用于数组有序的情况）</p>
-<p>因为这道题需要返回数组的index，所以我们不能使用第二种解法，因为排序之后的数组index都变了。所以这里我们采用第一种解法。</p>
+<p>这是道细节实现题。一般这种题都没什么算法，主要是要写的很clean，很elegant。一旦写不好就会写的乱七八糟。</p>
 <h1 id="solution">Solution</h1>
-<p>遍历数组，用一个HashMap保存已经访问过的数字。对于每个新的数字v，查看HashMap中是否存在target - v。如果是则直接返回他们的index <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; valToIdx = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (valToIdx.containsKey(target - nums[i])) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;valToIdx.get(target - nums[i]), i&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        valToIdx.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"Should not reach here"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>时间复杂度：O(N)<br>
-空间复杂度：O(N)<br>
-N是数组的大小</p>
+<p>首先我们要找出cycle。cycle就是对于每一行，下一个字符距离当前字符的距离是多少。不难得出cycle = 2 * numRows - 2<br>
+找出cycle之后还有一个问题，就是除了第一行和最后一行，还有两边斜着的字符要加进来。那么我们可以这么考虑：对于每个字符，都尝试去加它后面的斜着的字符。斜着的字符其实就是下一个cycle的前面的2 * i字符。<br>
+根据这个思路写出的代码会非常的简洁。 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">convert</span><span class="params">(String s, <span class="keyword">int</span> numRows)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> n = s.length();</span><br><span class="line">    <span class="keyword">if</span> (numRows &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">    <span class="keyword">int</span> cycle = <span class="number">2</span> * numRows - <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; numRows; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt; n; j += cycle) &#123;</span><br><span class="line">            sb.append(s.charAt(j));</span><br><span class="line">            <span class="keyword">if</span> (i != <span class="number">0</span> &amp;&amp; i != numRows - <span class="number">1</span> &amp;&amp; (j + cycle - i * <span class="number">2</span>) &lt; n) &#123;</span><br><span class="line">                sb.append(s.charAt(j + cycle - i * <span class="number">2</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sb.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>时间复杂度：O(n)。n是字符串的长度<br>
+空间复杂度：O(1)</p>
 
       
     </div>
@@ -478,9 +496,7 @@ N是数组的大小</p>
       
         <div class="post-tags">
           
-            <a href="/tags/Array/" rel="tag"># Array</a>
-          
-            <a href="/tags/Hash-Table/" rel="tag"># Hash Table</a>
+            <a href="/tags/Implementation/" rel="tag"># Implementation</a>
           
         </div>
       
@@ -493,14 +509,18 @@ N是数组的大小</p>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/02/23/Leetcode-5/" rel="next" title="[LeetCode] 5. Longest Palindromic Substring">
+                <i class="fa fa-chevron-left"></i> [LeetCode] 5. Longest Palindromic Substring
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/23/Leetcode-2-Add-Two-Numbers/" rel="prev" title="[LeetCode] 2. Add Two Numbers">
-                [LeetCode] 2. Add Two Numbers <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/23/Leetcode-7/" rel="prev" title="[LeetCode] 7. Reverse Integer">
+                [LeetCode] 7. Reverse Integer <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -813,9 +833,9 @@ N是数组的大小</p>
 
 <script>
   var disqus_config = function() {
-    this.page.url = "http://yoursite.com/2019/02/23/Leetcode-1-Two-Sum/";
-    this.page.identifier = "2019/02/23/Leetcode-1-Two-Sum/";
-    this.page.title = '[LeetCode] 1. Two Sum';
+    this.page.url = "http://yoursite.com/2019/02/23/Leetcode-6/";
+    this.page.identifier = "2019/02/23/Leetcode-6/";
+    this.page.title = '[LeetCode] 6. ZigZag Conversion';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');

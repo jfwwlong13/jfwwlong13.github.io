@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="Problem  Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use t">
-<meta name="keywords" content="Array,Hash Table">
+  <meta name="description" content="Problem Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000. Example 1:  Input: &quot;babad&quot; Output: &quot;bab&quot; Note: &quot;aba&quot; is also a valid answer.">
+<meta name="keywords" content="String">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[LeetCode] 1. Two Sum">
-<meta property="og:url" content="http://yoursite.com/2019/02/23/Leetcode-1-Two-Sum/index.html">
+<meta property="og:title" content="[LeetCode] 5. Longest Palindromic Substring">
+<meta property="og:url" content="http://yoursite.com/2019/02/23/Leetcode-5/index.html">
 <meta property="og:site_name" content="Jfwwlong Blog">
-<meta property="og:description" content="Problem  Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use t">
+<meta property="og:description" content="Problem Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000. Example 1:  Input: &quot;babad&quot; Output: &quot;bab&quot; Note: &quot;aba&quot; is also a valid answer.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-23T14:10:24.499Z">
+<meta property="og:updated_time" content="2019-02-23T14:13:26.755Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[LeetCode] 1. Two Sum">
-<meta name="twitter:description" content="Problem  Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use t">
+<meta name="twitter:title" content="[LeetCode] 5. Longest Palindromic Substring">
+<meta name="twitter:description" content="Problem Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000. Example 1:  Input: &quot;babad&quot; Output: &quot;bab&quot; Note: &quot;aba&quot; is also a valid answer.">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/23/Leetcode-1-Two-Sum/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/23/Leetcode-5/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>[LeetCode] 1. Two Sum | Jfwwlong Blog</title>
+  <title>[LeetCode] 5. Longest Palindromic Substring | Jfwwlong Blog</title>
   
 
 
@@ -323,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/Leetcode-1-Two-Sum/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/Leetcode-5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jianfu">
@@ -340,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">[LeetCode] 1. Two Sum
+          <h1 class="post-title" itemprop="name headline">[LeetCode] 5. Longest Palindromic Substring
 
               
             
@@ -366,7 +366,7 @@
                 
               
 
-              <time title="创建时间：2019-02-23 11:46:15 / 修改时间：23:10:24" itemprop="dateCreated datePublished" datetime="2019-02-23T11:46:15+09:00">2019-02-23</time>
+              <time title="创建时间：2019-02-23 22:02:00 / 修改时间：23:13:26" itemprop="dateCreated datePublished" datetime="2019-02-23T22:02:00+09:00">2019-02-23</time>
             
 
             
@@ -407,8 +407,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/02/23/Leetcode-1-Two-Sum/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/23/Leetcode-1-Two-Sum/" itemprop="commentCount"></span>
+                <a href="/2019/02/23/Leetcode-5/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/23/Leetcode-5/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -437,24 +437,31 @@
 
       
         <h1 id="problem">Problem</h1>
+<p>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.<br>
+Example 1:</p>
 <blockquote>
-<p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.<br>
-You may assume that each input would have exactly one solution, and you may not use the same element twice.<br>
-Example:<br>
-Given nums = [2, 7, 11, 15], target = 9,<br>
-Because nums[0] + nums[1] = 2 + 7 = 9,<br>
-return [0, 1].</p>
+<p>Input: "babad"<br>
+Output: "bab"<br>
+Note: "aba" is also a valid answer.</p>
+</blockquote>
+<p>Example 2:</p>
+<blockquote>
+<p>Input: "cbbd"<br>
+Output: "bb"</p>
 </blockquote>
 <h1 id="thinking">Thinking</h1>
-<p>遇到这种2 sum，3 sum，n sum的题目，无外乎就是两种思路<br>
-1. 用一个HashMap，用来保存查找过的数字<br>
-2. 双指针法（适用于数组有序的情况）</p>
-<p>因为这道题需要返回数组的index，所以我们不能使用第二种解法，因为排序之后的数组index都变了。所以这里我们采用第一种解法。</p>
+<p>Palindromic string有两种情况：</p>
+<ol type="1">
+<li>ABA型，即对称轴是一个字符</li>
+<li>ABBA型，即对称轴是空</li>
+</ol>
+<p>我们需要两种情况都判断</p>
 <h1 id="solution">Solution</h1>
-<p>遍历数组，用一个HashMap保存已经访问过的数字。对于每个新的数字v，查看HashMap中是否存在target - v。如果是则直接返回他们的index <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; valToIdx = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (valToIdx.containsKey(target - nums[i])) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;valToIdx.get(target - nums[i]), i&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        valToIdx.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"Should not reach here"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>时间复杂度：O(N)<br>
-空间复杂度：O(N)<br>
-N是数组的大小</p>
+<p>遍历数组。对于每个位置i，我们分别求上面的两种情况即可。<br>
+注意这里我们用了一个Pair来记录当前最长子串的开始和末尾。这么做的原因是节省空间。如果我们每次都生成一个子串的话会消耗很多额外空间。而且由于我们每次要更新两个值（结果的起始和末尾），我们只能用findPalindrome函数来更新结果。 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    Pair sub = <span class="keyword">new</span> Pair(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">        findPalindrome(s, i - <span class="number">1</span>, i + <span class="number">1</span>, sub);</span><br><span class="line">        findPalindrome(s, i, i + <span class="number">1</span>, sub);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s.substring(sub.start, sub.end);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">findPalindrome</span><span class="params">(String s, <span class="keyword">int</span> i, <span class="keyword">int</span> j, Pair sub)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; j &lt; s.length() &amp;&amp; s.charAt(i) == s.charAt(j)) &#123;</span><br><span class="line">        i--;</span><br><span class="line">        j++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (j - i - <span class="number">1</span> &gt; sub.end - sub.start) &#123;</span><br><span class="line">        sub.start = i + <span class="number">1</span>;</span><br><span class="line">        sub.end = j;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Pair</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> start;</span><br><span class="line">    <span class="keyword">int</span> end;</span><br><span class="line"></span><br><span class="line">    Pair(<span class="keyword">int</span> start, <span class="keyword">int</span> end) &#123;</span><br><span class="line">        <span class="keyword">this</span>.start = start;</span><br><span class="line">        <span class="keyword">this</span>.end = end;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>时间复杂度：O(<span class="math inline">\(n^2\)</span>)。n是数组的长度<br>
+空间复杂度：O(1)</p>
+<p>这道题还有一种解法叫做<a href="https://segmentfault.com/a/1190000003914228" target="_blank" rel="noopener">Manacher</a>算法，但是面试中肯定不会要求掌握这个。了解一下即可。</p>
 
       
     </div>
@@ -478,9 +485,7 @@ N是数组的大小</p>
       
         <div class="post-tags">
           
-            <a href="/tags/Array/" rel="tag"># Array</a>
-          
-            <a href="/tags/Hash-Table/" rel="tag"># Hash Table</a>
+            <a href="/tags/String/" rel="tag"># String</a>
           
         </div>
       
@@ -493,14 +498,18 @@ N是数组的大小</p>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/02/23/Leetcode-4/" rel="next" title="[LeetCode] 4. Median of Two Sorted Arrays">
+                <i class="fa fa-chevron-left"></i> [LeetCode] 4. Median of Two Sorted Arrays
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/23/Leetcode-2-Add-Two-Numbers/" rel="prev" title="[LeetCode] 2. Add Two Numbers">
-                [LeetCode] 2. Add Two Numbers <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/23/Leetcode-6/" rel="prev" title="[LeetCode] 6. ZigZag Conversion">
+                [LeetCode] 6. ZigZag Conversion <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -813,9 +822,9 @@ N是数组的大小</p>
 
 <script>
   var disqus_config = function() {
-    this.page.url = "http://yoursite.com/2019/02/23/Leetcode-1-Two-Sum/";
-    this.page.identifier = "2019/02/23/Leetcode-1-Two-Sum/";
-    this.page.title = '[LeetCode] 1. Two Sum';
+    this.page.url = "http://yoursite.com/2019/02/23/Leetcode-5/";
+    this.page.identifier = "2019/02/23/Leetcode-5/";
+    this.page.title = '[LeetCode] 5. Longest Palindromic Substring';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');

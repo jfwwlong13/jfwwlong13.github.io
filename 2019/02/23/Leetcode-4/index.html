@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="Problem  Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use t">
-<meta name="keywords" content="Array,Hash Table">
+  <meta name="description" content="Problem There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)). You may assume nums1">
+<meta name="keywords" content="Binary Search">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[LeetCode] 1. Two Sum">
-<meta property="og:url" content="http://yoursite.com/2019/02/23/Leetcode-1-Two-Sum/index.html">
+<meta property="og:title" content="[LeetCode] 4. Median of Two Sorted Arrays">
+<meta property="og:url" content="http://yoursite.com/2019/02/23/Leetcode-4/index.html">
 <meta property="og:site_name" content="Jfwwlong Blog">
-<meta property="og:description" content="Problem  Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use t">
+<meta property="og:description" content="Problem There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)). You may assume nums1">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-23T14:10:24.499Z">
+<meta property="og:updated_time" content="2019-02-23T14:12:51.511Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[LeetCode] 1. Two Sum">
-<meta name="twitter:description" content="Problem  Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use t">
+<meta name="twitter:title" content="[LeetCode] 4. Median of Two Sorted Arrays">
+<meta name="twitter:description" content="Problem There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)). You may assume nums1">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/23/Leetcode-1-Two-Sum/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/23/Leetcode-4/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>[LeetCode] 1. Two Sum | Jfwwlong Blog</title>
+  <title>[LeetCode] 4. Median of Two Sorted Arrays | Jfwwlong Blog</title>
   
 
 
@@ -323,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/Leetcode-1-Two-Sum/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/Leetcode-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jianfu">
@@ -340,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">[LeetCode] 1. Two Sum
+          <h1 class="post-title" itemprop="name headline">[LeetCode] 4. Median of Two Sorted Arrays
 
               
             
@@ -366,7 +366,7 @@
                 
               
 
-              <time title="创建时间：2019-02-23 11:46:15 / 修改时间：23:10:24" itemprop="dateCreated datePublished" datetime="2019-02-23T11:46:15+09:00">2019-02-23</time>
+              <time title="创建时间：2019-02-23 20:20:00 / 修改时间：23:12:51" itemprop="dateCreated datePublished" datetime="2019-02-23T20:20:00+09:00">2019-02-23</time>
             
 
             
@@ -407,8 +407,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/02/23/Leetcode-1-Two-Sum/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/23/Leetcode-1-Two-Sum/" itemprop="commentCount"></span>
+                <a href="/2019/02/23/Leetcode-4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/23/Leetcode-4/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -437,24 +437,41 @@
 
       
         <h1 id="problem">Problem</h1>
+<p>There are two sorted arrays nums1 and nums2 of size m and n respectively.<br>
+Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).<br>
+You may assume nums1 and nums2 cannot be both empty.</p>
 <blockquote>
-<p>Given an array of integers, return indices of the two numbers such that they add up to a specific target.<br>
-You may assume that each input would have exactly one solution, and you may not use the same element twice.<br>
-Example:<br>
-Given nums = [2, 7, 11, 15], target = 9,<br>
-Because nums[0] + nums[1] = 2 + 7 = 9,<br>
-return [0, 1].</p>
+<p>Example 1: nums1 = [1, 3]<br>
+nums2 = [2]<br>
+The median is 2.0</p>
+</blockquote>
+<blockquote>
+<p>Example 2:<br>
+nums1 = [1, 2]<br>
+nums2 = [3, 4]<br>
+The median is (2 + 3)/2 = 2.5</p>
 </blockquote>
 <h1 id="thinking">Thinking</h1>
-<p>遇到这种2 sum，3 sum，n sum的题目，无外乎就是两种思路<br>
-1. 用一个HashMap，用来保存查找过的数字<br>
-2. 双指针法（适用于数组有序的情况）</p>
-<p>因为这道题需要返回数组的index，所以我们不能使用第二种解法，因为排序之后的数组index都变了。所以这里我们采用第一种解法。</p>
+<p>这道题还是很有难度的。<br>
+因为是两个有序数组，所以第一时间想到的就是二分搜索。<br>
+由于两个数组的和L可能是奇数也可能是偶数，所以我们需要分两种情况讨论：</p>
+<ol type="1">
+<li>当L是奇数时：返回第<span class="math inline">\(\frac{L}{2} + 1\)</span>大的数</li>
+<li>当L是偶数时，返回第<span class="math inline">\(\frac{L}{2}\)</span>和<span class="math inline">\(\frac{L}{2} + 1\)</span>的平均数</li>
+</ol>
+<p>这样我们就可以有一个子函数，用来找两个数组中第K大的数。<br>
+那具体怎么找呢？我们可以分别取两个数组中第K / 2大的数M1和M2，通过比较M1和M2来删除部分元素：</p>
+<ol type="1">
+<li>如果M1 &lt; M2，那么我们可以丢弃nums1数组中的包括M1以及其之前的所有元素</li>
+<li>如果M1 &gt; M2，则抛弃M2中同样长度的元素</li>
+<li>如果M1 = M2，则直接返回M1或者M2</li>
+</ol>
+<p>为什么可以这样删除元素呢？因为如果M1 &lt; M2，那么对于nums1数组，M1及其之前的元素永远不可能成为两个数组中第K大的数。这个并不难想。所以我们就可以这样一直递归下去。</p>
 <h1 id="solution">Solution</h1>
-<p>遍历数组，用一个HashMap保存已经访问过的数字。对于每个新的数字v，查看HashMap中是否存在target - v。如果是则直接返回他们的index <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; valToIdx = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (valToIdx.containsKey(target - nums[i])) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;valToIdx.get(target - nums[i]), i&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        valToIdx.put(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"Should not reach here"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>时间复杂度：O(N)<br>
-空间复杂度：O(N)<br>
-N是数组的大小</p>
+<p>根据上面的思路就可以写代码了。<br>
+这里有一点要注意的是，由于数组nums1的长度有可能小于K / 2，比如[0]和[1,2,3,4,5]，这个时候对于nums1数组，我们需要取K / 2和nums1的长度的最小值，防止数组越界。 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> m = nums1.length, n = nums2.length;</span><br><span class="line">    <span class="keyword">if</span> ((m + n) % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> (findKthNum(nums1, <span class="number">0</span>, m, nums2, <span class="number">0</span>, n, (m + n) / <span class="number">2</span>) </span><br><span class="line">                + findKthNum(nums1, <span class="number">0</span>, m, nums2, <span class="number">0</span>, n, (m + n) / <span class="number">2</span> + <span class="number">1</span>)) / <span class="number">2.0</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> findKthNum(nums1, <span class="number">0</span>, m, nums2, <span class="number">0</span>, n, (m + n) / <span class="number">2</span> + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">findKthNum</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span> s1, <span class="keyword">int</span> l1, </span></span></span><br><span class="line"><span class="function"><span class="params">                       <span class="keyword">int</span>[] nums2, <span class="keyword">int</span> s2, <span class="keyword">int</span> l2, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Always keep nums1 is the shorter array</span></span><br><span class="line">    <span class="keyword">if</span> (l1 &gt; l2) &#123;</span><br><span class="line">        <span class="keyword">return</span> findKthNum(nums2, s2, l2, nums1, s1, l1, k);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Check if nums1 is empty </span></span><br><span class="line">    <span class="keyword">if</span> (l1 == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> nums2[k - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// If k is 1, then return the smallest num in nums1 and nums2</span></span><br><span class="line">    <span class="keyword">if</span> (k == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> Math.min(nums1[s1], nums2[s2]);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Since k / 2 might be longer than l1, so we have to use the min length </span></span><br><span class="line">    <span class="keyword">int</span> pa = Math.min(l1, k / <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">int</span> pb = k - pa;</span><br><span class="line">    <span class="keyword">if</span> (nums1[s1 + pa - <span class="number">1</span>] == nums2[s2 + pb - <span class="number">1</span>]) &#123;</span><br><span class="line">        <span class="keyword">return</span> nums1[s1 + pa - <span class="number">1</span>];</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums1[s1 + pa - <span class="number">1</span>] &lt; nums2[s2 + pb - <span class="number">1</span>]) &#123;</span><br><span class="line">        <span class="keyword">return</span> findKthNum(nums1, s1 + pa, l1 - pa, nums2, s2, l2, k - pa);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> findKthNum(nums1, s1, l1, nums2, s2 + pb, l2 - pb, k - pb);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>时间复杂度：O(<span class="math inline">\(log(M + N)\)</span>)。M和N分别是nums1和nums2的长度<br>
+空间复杂度：O(<span class="math inline">\(log(M + N)\)</span>)。空间主要用在了递归上面。如果不算递归的空间那么空间复杂度就是O(1)</p>
 
       
     </div>
@@ -478,9 +495,7 @@ N是数组的大小</p>
       
         <div class="post-tags">
           
-            <a href="/tags/Array/" rel="tag"># Array</a>
-          
-            <a href="/tags/Hash-Table/" rel="tag"># Hash Table</a>
+            <a href="/tags/Binary-Search/" rel="tag"># Binary Search</a>
           
         </div>
       
@@ -493,14 +508,18 @@ N是数组的大小</p>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/02/23/Leetcode-3/" rel="next" title="[LeetCode] 3. Longest Substring Without Repeating Characters">
+                <i class="fa fa-chevron-left"></i> [LeetCode] 3. Longest Substring Without Repeating Characters
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/23/Leetcode-2-Add-Two-Numbers/" rel="prev" title="[LeetCode] 2. Add Two Numbers">
-                [LeetCode] 2. Add Two Numbers <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/23/Leetcode-5/" rel="prev" title="[LeetCode] 5. Longest Palindromic Substring">
+                [LeetCode] 5. Longest Palindromic Substring <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -813,9 +832,9 @@ N是数组的大小</p>
 
 <script>
   var disqus_config = function() {
-    this.page.url = "http://yoursite.com/2019/02/23/Leetcode-1-Two-Sum/";
-    this.page.identifier = "2019/02/23/Leetcode-1-Two-Sum/";
-    this.page.title = '[LeetCode] 1. Two Sum';
+    this.page.url = "http://yoursite.com/2019/02/23/Leetcode-4/";
+    this.page.identifier = "2019/02/23/Leetcode-4/";
+    this.page.title = '[LeetCode] 4. Median of Two Sorted Arrays';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
