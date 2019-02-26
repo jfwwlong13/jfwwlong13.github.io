@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="Problem  You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and">
-<meta name="keywords" content="Math,Linked List">
+  <meta name="description" content="Problem Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward. Example 1:  Input: 121 Output: true  Example 2:  Input: -121 Output: false">
+<meta name="keywords" content="Math">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[LeetCode] 2. Add Two Numbers">
-<meta property="og:url" content="http://yoursite.com/2019/02/23/Leetcode-2-Add-Two-Numbers/index.html">
+<meta property="og:title" content="[LeetCode] 9. Palindrome Number">
+<meta property="og:url" content="http://yoursite.com/2019/02/24/Leetcode-9/index.html">
 <meta property="og:site_name" content="Jfwwlong Blog">
-<meta property="og:description" content="Problem  You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and">
+<meta property="og:description" content="Problem Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward. Example 1:  Input: 121 Output: true  Example 2:  Input: -121 Output: false">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-23T14:11:28.635Z">
+<meta property="og:updated_time" content="2019-02-24T13:16:25.022Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[LeetCode] 2. Add Two Numbers">
-<meta name="twitter:description" content="Problem  You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and">
+<meta name="twitter:title" content="[LeetCode] 9. Palindrome Number">
+<meta name="twitter:description" content="Problem Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward. Example 1:  Input: 121 Output: true  Example 2:  Input: -121 Output: false">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/23/Leetcode-2-Add-Two-Numbers/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/24/Leetcode-9/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>[LeetCode] 2. Add Two Numbers | Jfwwlong Blog</title>
+  <title>[LeetCode] 9. Palindrome Number | Jfwwlong Blog</title>
   
 
 
@@ -323,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/Leetcode-2-Add-Two-Numbers/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/24/Leetcode-9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jianfu">
@@ -340,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">[LeetCode] 2. Add Two Numbers
+          <h1 class="post-title" itemprop="name headline">[LeetCode] 9. Palindrome Number
 
               
             
@@ -366,7 +366,7 @@
                 
               
 
-              <time title="创建时间：2019-02-23 17:55:15 / 修改时间：23:11:28" itemprop="dateCreated datePublished" datetime="2019-02-23T17:55:15+09:00">2019-02-23</time>
+              <time title="创建时间：2019-02-24 19:15:00 / 修改时间：22:16:25" itemprop="dateCreated datePublished" datetime="2019-02-24T19:15:00+09:00">2019-02-24</time>
             
 
             
@@ -407,8 +407,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/02/23/Leetcode-2-Add-Two-Numbers/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/23/Leetcode-2-Add-Two-Numbers/" itemprop="commentCount"></span>
+                <a href="/2019/02/24/Leetcode-9/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/24/Leetcode-9/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -437,27 +437,37 @@
 
       
         <h1 id="problem">Problem</h1>
+<p>Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.</p>
+<p>Example 1:</p>
 <blockquote>
-<p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.<br>
-You may assume the two numbers do not contain any leading zero, except the number 0 itself.<br>
-Example:<br>
-Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>
-Output: 7 -&gt; 0 -&gt; 8<br>
-Explanation: 342 + 465 = 807.</p>
+<p>Input: 121<br>
+Output: true</p>
 </blockquote>
+<p>Example 2:</p>
+<blockquote>
+<p>Input: -121<br>
+Output: false<br>
+Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.</p>
+</blockquote>
+<p>Example 3:</p>
+<blockquote>
+<p>Input: 10<br>
+Output: false<br>
+Explanation: Reads 01 from right to left. Therefore it is not a palindrome.</p>
+</blockquote>
+<p>Follow up:</p>
+<p>Coud you solve it without converting the integer to a string?</p>
 <h1 id="thinking">Thinking</h1>
-<p>链表的题。用于模拟数字的加法。因为链表的头保存着数字的低位，所以我们可以直接循环链表来模拟数字进位计算。</p>
+<p>这道题的思路还是很清楚的。一个数字如果是对称的，那么把他反过来后形成的数字肯定和原来的数字是一样的。所以我们只需要对数字做翻转，然后判断翻转后的数字是不是原来的数字</p>
 <h1 id="solution">Solution</h1>
+<p>有两个点注意：</p>
 <ol type="1">
-<li>对于第i位，算出第i位的和sum = v1 + v2 + carry。carry代表着进位（初始值是0）</li>
-<li>如果sum &gt;= 10，就代表这有进位，把carry设为1。</li>
-<li>把sum % 10作为当前第i位的结果。</li>
-<li>循环计算下一位。</li>
+<li>负数永远不会是palindrome</li>
+<li>注意判断溢出的情况</li>
 </ol>
-<p><strong>这道题需要注意循环结束后要检查carry的值，如果大于0则需要建立一个新的节点</strong>。比如999 + 1 = 1000 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">    ListNode dummy = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    ListNode prev = dummy;</span><br><span class="line">    <span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (l1 != <span class="keyword">null</span> || l2 != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> v1 = l1 == <span class="keyword">null</span> ? <span class="number">0</span> : l1.val;</span><br><span class="line">        <span class="keyword">int</span> v2 = l2 == <span class="keyword">null</span> ? <span class="number">0</span> : l2.val;</span><br><span class="line">        <span class="keyword">int</span> sum = v1 + v2 + carry;</span><br><span class="line">        prev.next = <span class="keyword">new</span> ListNode(sum % <span class="number">10</span>);</span><br><span class="line">        </span><br><span class="line">        prev = prev.next;</span><br><span class="line">        carry = sum / <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">if</span> (l1 != <span class="keyword">null</span>) &#123;</span><br><span class="line">            l1 = l1.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (l2 != <span class="keyword">null</span>) &#123;</span><br><span class="line">            l2 = l2.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (carry &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        prev.next = <span class="keyword">new</span> ListNode(carry);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dummy.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>时间复杂度：O(<span class="math inline">\(max(M, N)\)</span>)<br>
-空间复杂度：O(<span class="math inline">\(max(M, N)\)</span>)<br>
-M和N分别是两个链表的长度</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPalindrome</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> origin = x;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (x != <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> num = x % <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">if</span> (gtMaxPos(res, num)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        res = res * <span class="number">10</span> + num;</span><br><span class="line">        x /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res == origin;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">gtMaxPos</span><span class="params">(<span class="keyword">int</span> res, <span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (res &gt; Integer.MAX_VALUE / <span class="number">10</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (res == Integer.MAX_VALUE / <span class="number">10</span>) &amp;&amp; (num &gt; Integer.MAX_VALUE % <span class="number">10</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>时间复杂度：O(<span class="math inline">\(log_{10}X\)</span>)。X是数字的值<br>
+空间复杂度：O(1)</p>
 
       
     </div>
@@ -483,8 +493,6 @@ M和N分别是两个链表的长度</p>
           
             <a href="/tags/Math/" rel="tag"># Math</a>
           
-            <a href="/tags/Linked-List/" rel="tag"># Linked List</a>
-          
         </div>
       
 
@@ -496,8 +504,8 @@ M和N分别是两个链表的长度</p>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/23/Leetcode-1-Two-Sum/" rel="next" title="[LeetCode] 1. Two Sum">
-                <i class="fa fa-chevron-left"></i> [LeetCode] 1. Two Sum
+              <a href="/2019/02/24/Leetcode-8/" rel="next" title="[LeetCode] 8. String to Integer (atoi)">
+                <i class="fa fa-chevron-left"></i> [LeetCode] 8. String to Integer (atoi)
               </a>
             
           </div>
@@ -506,8 +514,8 @@ M和N分别是两个链表的长度</p>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/23/Leetcode-3/" rel="prev" title="[LeetCode] 3. Longest Substring Without Repeating Characters">
-                [LeetCode] 3. Longest Substring Without Repeating Characters <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/24/Leetcode-10/" rel="prev" title="[LeetCode] 10. Regular Expression Matching">
+                [LeetCode] 10. Regular Expression Matching <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -822,9 +830,9 @@ M和N分别是两个链表的长度</p>
 
 <script>
   var disqus_config = function() {
-    this.page.url = "http://yoursite.com/2019/02/23/Leetcode-2-Add-Two-Numbers/";
-    this.page.identifier = "2019/02/23/Leetcode-2-Add-Two-Numbers/";
-    this.page.title = '[LeetCode] 2. Add Two Numbers';
+    this.page.url = "http://yoursite.com/2019/02/24/Leetcode-9/";
+    this.page.identifier = "2019/02/24/Leetcode-9/";
+    this.page.title = '[LeetCode] 9. Palindrome Number';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');

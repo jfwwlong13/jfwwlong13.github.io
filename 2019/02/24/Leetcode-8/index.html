@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="Problem  You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and">
-<meta name="keywords" content="Math,Linked List">
+  <meta name="description" content="Problem Implement atoi which converts a string to an integer. The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting f">
+<meta name="keywords" content="Implementation,Math">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[LeetCode] 2. Add Two Numbers">
-<meta property="og:url" content="http://yoursite.com/2019/02/23/Leetcode-2-Add-Two-Numbers/index.html">
+<meta property="og:title" content="[LeetCode] 8. String to Integer (atoi)">
+<meta property="og:url" content="http://yoursite.com/2019/02/24/Leetcode-8/index.html">
 <meta property="og:site_name" content="Jfwwlong Blog">
-<meta property="og:description" content="Problem  You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and">
+<meta property="og:description" content="Problem Implement atoi which converts a string to an integer. The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting f">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-23T14:11:28.635Z">
+<meta property="og:updated_time" content="2019-02-24T09:22:35.706Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[LeetCode] 2. Add Two Numbers">
-<meta name="twitter:description" content="Problem  You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and">
+<meta name="twitter:title" content="[LeetCode] 8. String to Integer (atoi)">
+<meta name="twitter:description" content="Problem Implement atoi which converts a string to an integer. The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting f">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/23/Leetcode-2-Add-Two-Numbers/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/24/Leetcode-8/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>[LeetCode] 2. Add Two Numbers | Jfwwlong Blog</title>
+  <title>[LeetCode] 8. String to Integer (atoi) | Jfwwlong Blog</title>
   
 
 
@@ -323,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/23/Leetcode-2-Add-Two-Numbers/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/24/Leetcode-8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jianfu">
@@ -340,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">[LeetCode] 2. Add Two Numbers
+          <h1 class="post-title" itemprop="name headline">[LeetCode] 8. String to Integer (atoi)
 
               
             
@@ -366,7 +366,7 @@
                 
               
 
-              <time title="创建时间：2019-02-23 17:55:15 / 修改时间：23:11:28" itemprop="dateCreated datePublished" datetime="2019-02-23T17:55:15+09:00">2019-02-23</time>
+              <time title="创建时间：2019-02-24 18:15:00 / 修改时间：18:22:35" itemprop="dateCreated datePublished" datetime="2019-02-24T18:15:00+09:00">2019-02-24</time>
             
 
             
@@ -407,8 +407,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/02/23/Leetcode-2-Add-Two-Numbers/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/23/Leetcode-2-Add-Two-Numbers/" itemprop="commentCount"></span>
+                <a href="/2019/02/24/Leetcode-8/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/02/24/Leetcode-8/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -437,27 +437,61 @@
 
       
         <h1 id="problem">Problem</h1>
+<p>Implement atoi which converts a string to an integer.</p>
+<p>The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value.</p>
+<p>The string can contain additional characters after those that form the integral number, which are ignored and have no effect on the behavior of this function.</p>
+<p>If the first sequence of non-whitespace characters in str is not a valid integral number, or if no such sequence exists because either str is empty or it contains only whitespace characters, no conversion is performed.</p>
+<p>If no valid conversion could be performed, a zero value is returned.</p>
+<p>Note:</p>
+<p>Only the space character ' ' is considered as whitespace character.<br>
+Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−231, 231 − 1]. If the numerical value is out of the range of representable values, INT_MAX (231 − 1) or INT_MIN (−231) is returned.<br>
+Example 1:</p>
 <blockquote>
-<p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.<br>
-You may assume the two numbers do not contain any leading zero, except the number 0 itself.<br>
-Example:<br>
-Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>
-Output: 7 -&gt; 0 -&gt; 8<br>
-Explanation: 342 + 465 = 807.</p>
+<p>Input: "42"<br>
+Output: 42</p>
+</blockquote>
+<p>Example 2:</p>
+<blockquote>
+<p>Input: " -42"<br>
+Output: -42<br>
+Explanation: The first non-whitespace character is '-', which is the minus sign.<br>
+Then take as many numerical digits as possible, which gets 42.</p>
+</blockquote>
+<p>Example 3:</p>
+<blockquote>
+<p>Input: "4193 with words"<br>
+Output: 4193<br>
+Explanation: Conversion stops at digit '3' as the next character is not a numerical digit.</p>
+</blockquote>
+<p>Example 4:</p>
+<blockquote>
+<p>Input: "words and 987"<br>
+Output: 0<br>
+Explanation: The first non-whitespace character is 'w', which is not a numerical<br>
+digit or a +/- sign. Therefore no valid conversion could be performed.</p>
+</blockquote>
+<p>Example 5:</p>
+<blockquote>
+<p>Input: "-91283472332"<br>
+Output: -2147483648<br>
+Explanation: The number "-91283472332" is out of the range of a 32-bit signed integer.<br>
+Thefore INT_MIN (−231) is returned.</p>
 </blockquote>
 <h1 id="thinking">Thinking</h1>
-<p>链表的题。用于模拟数字的加法。因为链表的头保存着数字的低位，所以我们可以直接循环链表来模拟数字进位计算。</p>
-<h1 id="solution">Solution</h1>
+<p>这是一道非常经典的题目，考察类似于C++中的<a href="http://www.cplusplus.com/reference/cstdlib/atoi/" target="_blank" rel="noopener">atoi</a>函数<br>
+这道题主要考察的是细节实现以及各种corner case的考虑<br>
+主要要考虑以下几种case：</p>
 <ol type="1">
-<li>对于第i位，算出第i位的和sum = v1 + v2 + carry。carry代表着进位（初始值是0）</li>
-<li>如果sum &gt;= 10，就代表这有进位，把carry设为1。</li>
-<li>把sum % 10作为当前第i位的结果。</li>
-<li>循环计算下一位。</li>
+<li>略过字符串开头的所有空格符' '</li>
+<li>如果有符号，记录符号的正负</li>
+<li>String转int的过程</li>
+<li>考虑溢出的情况</li>
+<li>忽略数字后面的所有字符</li>
 </ol>
-<p><strong>这道题需要注意循环结束后要检查carry的值，如果大于0则需要建立一个新的节点</strong>。比如999 + 1 = 1000 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">    ListNode dummy = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    ListNode prev = dummy;</span><br><span class="line">    <span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (l1 != <span class="keyword">null</span> || l2 != <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> v1 = l1 == <span class="keyword">null</span> ? <span class="number">0</span> : l1.val;</span><br><span class="line">        <span class="keyword">int</span> v2 = l2 == <span class="keyword">null</span> ? <span class="number">0</span> : l2.val;</span><br><span class="line">        <span class="keyword">int</span> sum = v1 + v2 + carry;</span><br><span class="line">        prev.next = <span class="keyword">new</span> ListNode(sum % <span class="number">10</span>);</span><br><span class="line">        </span><br><span class="line">        prev = prev.next;</span><br><span class="line">        carry = sum / <span class="number">10</span>;</span><br><span class="line">        <span class="keyword">if</span> (l1 != <span class="keyword">null</span>) &#123;</span><br><span class="line">            l1 = l1.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (l2 != <span class="keyword">null</span>) &#123;</span><br><span class="line">            l2 = l2.next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (carry &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        prev.next = <span class="keyword">new</span> ListNode(carry);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dummy.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>时间复杂度：O(<span class="math inline">\(max(M, N)\)</span>)<br>
-空间复杂度：O(<span class="math inline">\(max(M, N)\)</span>)<br>
-M和N分别是两个链表的长度</p>
+<h1 id="solution">Solution</h1>
+<p>根据上面的思路，我们可以写出思路非常明确的代码 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">myAtoi</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> n = str.length();</span><br><span class="line">    <span class="keyword">int</span> pos = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (pos &lt; n &amp;&amp; str.charAt(pos) == <span class="string">' '</span>) &#123;</span><br><span class="line">        pos++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">if</span> (pos &lt; n &amp;&amp; (str.charAt(pos) == <span class="string">'+'</span> || str.charAt(pos) == <span class="string">'-'</span>)) &#123;</span><br><span class="line">        flag = str.charAt(pos) == <span class="string">'+'</span>;</span><br><span class="line">        pos++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = pos; i &lt; n &amp;&amp; isDigit(str.charAt(i)); i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> num = str.charAt(i) - <span class="string">'0'</span>;</span><br><span class="line">        <span class="keyword">if</span> (gtMaxPos(res, num)) &#123;</span><br><span class="line">            <span class="keyword">return</span> flag ? Integer.MAX_VALUE : Integer.MIN_VALUE;</span><br><span class="line">        &#125;</span><br><span class="line">        res = res * <span class="number">10</span> + num;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> flag ? res : -res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isDigit</span><span class="params">(<span class="keyword">char</span> ch)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">gtMaxPos</span><span class="params">(<span class="keyword">int</span> res, <span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (res &gt; Integer.MAX_VALUE / <span class="number">10</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (res == Integer.MAX_VALUE / <span class="number">10</span>) &amp;&amp; (num &gt; Integer.MAX_VALUE % <span class="number">10</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>时间复杂度：O(n)。n是字符串的长度<br>
+空间复杂度：O(1)</p>
 
       
     </div>
@@ -481,9 +515,9 @@ M和N分别是两个链表的长度</p>
       
         <div class="post-tags">
           
-            <a href="/tags/Math/" rel="tag"># Math</a>
+            <a href="/tags/Implementation/" rel="tag"># Implementation</a>
           
-            <a href="/tags/Linked-List/" rel="tag"># Linked List</a>
+            <a href="/tags/Math/" rel="tag"># Math</a>
           
         </div>
       
@@ -496,8 +530,8 @@ M和N分别是两个链表的长度</p>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/23/Leetcode-1-Two-Sum/" rel="next" title="[LeetCode] 1. Two Sum">
-                <i class="fa fa-chevron-left"></i> [LeetCode] 1. Two Sum
+              <a href="/2019/02/23/Leetcode-7/" rel="next" title="[LeetCode] 7. Reverse Integer">
+                <i class="fa fa-chevron-left"></i> [LeetCode] 7. Reverse Integer
               </a>
             
           </div>
@@ -506,8 +540,8 @@ M和N分别是两个链表的长度</p>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/02/23/Leetcode-3/" rel="prev" title="[LeetCode] 3. Longest Substring Without Repeating Characters">
-                [LeetCode] 3. Longest Substring Without Repeating Characters <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/24/Leetcode-9/" rel="prev" title="[LeetCode] 9. Palindrome Number">
+                [LeetCode] 9. Palindrome Number <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -822,9 +856,9 @@ M和N分别是两个链表的长度</p>
 
 <script>
   var disqus_config = function() {
-    this.page.url = "http://yoursite.com/2019/02/23/Leetcode-2-Add-Two-Numbers/";
-    this.page.identifier = "2019/02/23/Leetcode-2-Add-Two-Numbers/";
-    this.page.title = '[LeetCode] 2. Add Two Numbers';
+    this.page.url = "http://yoursite.com/2019/02/24/Leetcode-8/";
+    this.page.identifier = "2019/02/24/Leetcode-8/";
+    this.page.title = '[LeetCode] 8. String to Integer (atoi)';
     };
   function loadComments() {
     var d = document, s = d.createElement('script');
